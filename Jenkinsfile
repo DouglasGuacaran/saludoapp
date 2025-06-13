@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clonar') {
             steps {
-                git 'https://github.com/DouglasGuacaran/saludoapp.git'
+                git branch: 'main', url: 'https://github.com/DouglasGuacaran/saludoapp.git'
             }
         }
         stage('Compilar') {
@@ -26,12 +26,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "🎉 El build fue exitoso"
+        }
+        failure {
+            echo "💥 El build falló"
+        }
+    }
 }
-post {
-    success {
-        echo "🎉 El build fue exitoso"
-    }
-    failure {
-        echo "💥 El build falló"
-    }
-}   
