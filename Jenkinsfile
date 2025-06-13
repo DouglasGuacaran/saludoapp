@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.8.4'
-        jdk 'JavaSE'
+        maven 'Maven 3.9.10'
+        java '21.0.7'
     }
     stages {
         stage('Clonar') {
